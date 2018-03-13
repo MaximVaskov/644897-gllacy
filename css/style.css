@@ -1,18 +1,76 @@
-﻿body { 
-  margin: 0;
-  padding: 0;
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 400;
-  color: #ffffff;
-  background-color: #849d8f;
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #849d8f;
 }
 
 .visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
 }
+
+a {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Верхнее меню */
+.main-menu {
+    list-style: none;
+    font-size: 16px;
+}
+
+.main-menu > li {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-item a {
+    display: block;
+    padding: 8px 10px;
+    color: #ffffff;
+    border-radius: 20px;
+    
+    
+}
+.sub-menu a{
+    font-size: 14px;
+    color: #323232;
+}
+
+.main-menu a:hover {
+    background: #f5f5f5;
+    color: #333333;
+}
+
+.main-menu .sub-menu {
+    list-style: none;
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+    background-color: #f8f7f4;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+    
+}
+submenu-item {
+    align-content: center; 
+}
+.sub-menu a {
+    text-decoration:none;
+}
+
+.main-menu > li:hover .sub-menu {
+    display: block;
+}
+.submenu-item:hover a {
+    background-color: #fbded7;
+}
+
