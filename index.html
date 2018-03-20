@@ -4,17 +4,21 @@
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+  <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
+    <input class="visually-hidden" type="radio" id="product-2" name="toggle">
+    <input class="visually-hidden" type="radio" id="product-3" name="toggle">
     <header class="main-header">
       <nav class="main-navigation">
         <a class="main-header-logo"><img src="img/logo.svg" width="154" height="64" alt="Логотип «Gllacy Shop»"></a>
         <ul class="main-menu">
-          <li class="nav-item"><a class="main-item" href="#">Каталог</a>
+          <li class="nav-item"><a class="main-item" href="catalog.html">Каталог</a>
             <ul class="sub-menu">
-              <li class="submenu-item"><b><a href="#">Новинки</a></b></li>
-                <li class="submenu-item"><a href="catalog.html">Сливочное</a></li>
+              <li class="first-submenu-item"><a href="#">Новинки</a></li>
+              <li class="submenu-item"><a href="catalog.html">Сливочное</a></li>
               <li class="submenu-item"><a href="#">Щербеты</a></li>
               <li class="submenu-item"><a href="#">Фруктовый лед</a></li>
               <li class="submenu-item"><a href="#">Мелорин</a></li>
@@ -28,9 +32,7 @@
             <label for="search-question" class="visually-hidden">Поиск</label>
             <input name="search-question" id="search-question" placeholder="Что ищем?">
           </form>
-           
         </div>
-        
         <div class="signup">
           <span class="enter-form">Вход</span>
           <form class="sign-form" id="sign-form" action="/" method="post">
@@ -52,71 +54,132 @@
         <p class="phone">8 812 450-25-25</p>
       </div>
     </header>
+    <div class="site-wrapper">
+      <div class="container">
+        <section class="slider">
+          <div class="slider-controls">
+            <label for="product-1">Первый</label>
+            <label for="product-2">Второй</label>
+            <label for="product-3">Третий</label>
+          </div>
+          <ul class="slider-list">
+            <li class="slider-item slide" id="slide1">
+              <h3 class="slide-title">
+                Крем-брюле и пломбир с малиновым джемом
+              </h3>
+              <a class="button slide-button" href="#">Давайте оба!</a>
+            </li>
+            <li class="slider-item slide" id="slide2">
+              <h3 class="slide-title">
+                Шоколадный пломбир и лимонный сорбет
+              </h3>
+              <a class="button slide-button" href="#">Давайте оба!</a>
+            </li>
+            <li class="slider-item slide" id="slide3">
+              <h3 class="slide-title">
+                Пломбир с помадкой и клубничный щербет
+              </h3>
+              <a class="button slide-button" href="#">Давайте оба!</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
     <main class="main">
-      <section class="slider">
-        <h2 class="slider-title">Крем брюле и пломбир<br>с малиновым джемом</h2>
-        <h2 class="slider-title visually-hidden">Шоколадный пломбир и лимонный сорбет</h2>
-        <h2 class="slider-title visually-hidden">Пломбир с помадкой и клубничный щербет</h2>
-        <input type="radio" name="choose" value="a" checked>
-        <input type="radio" name="choose" value="b">
-        <input type="radio" name="choose" value="c">
-        <a href="#" class="slider-button">Давайте оба!</a>
-      </section>
       <section class="stock-banners">
        <h2 class="visually-hidden">Баннеры с акциями</h2>
         <section class="banner banner-strawberry">
           <h3>Малинка даром!</h3>
           <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-          <a href="#" class="button">Хочу варенье!</a>
+          <a href="#" class="button banner-btn">Хочу варенье!</a>
         </section>
         <section class="banner banner-chocolate">
           <h3>Шоколадки даром!</h3>
           <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-          <a href="#" class="button">Хочу шоколадки!</a>
+          <a href="#" class="button banner-btn">Хочу шоколадки!</a>
         </section>
       </section>
       <section class="hits">
-        <h2 class="visually-hidden">Хиты</h2>
-        <div class="catalog-item">
-          <div class="catalog-item-prewiew-hit">
-            <img class="catalog-img" src="img/ice-cream-1.jpg" width="267" height="267" alt="Мороженое">
-          </div>
-          <p><span class="price">310</span><span class="kg">/кг</span></p>
-            <span><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></span>
-            <div class="catalog-item-hover-wrap">
-              <a class="button" href="#">Быстрый просмотр</a>
+          <h2 class="visually-hidden">Хиты</h2>
+          <div class="hits-items">
+            <div class="product-item">
+              <div class="product-item-preview  product-item-preview-hit">
+                <div class="catalog-img-wrap">
+                  <img class="catalog-img" src="img/ice-cream-1.jpg" width="267" height="267" alt="Мороженое">
+                </div>
+                <div class="product-item-price">
+                  <span class="product-item-cost">310&#8381;</span>
+                  <span class="product-item-amount">/кг</span>
+                </div>
+              </div>
+              <div class="product-item-desc">
+                <a href="#" class="product-item-link">
+                  <span class="product-item-link-content">Сливочное с апельсиновым джемом и цитрусовой стружкой</span>
+                </a>
+              </div>
+              <div class="product-item-hover-wrap">
+                <a class="button  product-item-btn" href="#">Быстрый просмотр</a>
+              </div>
             </div>
-        </div>
-        <div class="catalog-item">
-          <div class="catalog-item-prewiew-hit">
-            <img class="catalog-img" src="img/ice-cream-2.jpg" width="267" height="267" alt="Мороженое">
+            <div class="product-item">
+              <div class="product-item-preview  product-item-preview-hit">
+                <div class="catalog-img-wrap">
+                  <img class="catalog-img-wrap" src="img/ice-cream-2.jpg" width="267" height="267" alt="Мороженое">
+                </div>
+                <div class="product-item-price">
+                  <span class="product-item-cost">380&#8381;</span>
+                  <span class="product-item-amount">/кг</span>
+                </div>
+              </div>
+              <div class="product-item-desc">
+                <a href="#" class="product-item-link">
+                  <span class="product-item-link-content">Сливочно-кофейное с кусочками шоколада</span>
+                </a>
+              </div>
+              <div class="product-item-hover-wrap">
+                <a class="button  product-item-btn" href="#">Быстрый просмотр</a>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item-preview  product-item-preview-hit">
+                <div class="catalog-img-wrap">
+                  <img class="catalog-img" src="img/ice-cream-3.jpg" width="267" height="267" alt="Мороженое">
+                </div>
+                <div class="product-item-price">
+                  <span class="product-item-cost">355&#8381;</span>
+                  <span class="product-item-amount">/кг</span>
+                </div>
+              </div>
+              <div class="product-item-desc">
+                <a href="#" class="product-item-link">
+                  <span class="product-item-link-content">Сливочно-клубничное с присыпкой из белого шоколада</span>
+                </a>
+              </div>
+              <div class="product-item-hover-wrap">
+                <a class="button  product-item-btn" href="#">Быстрый просмотр</a>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item-preview  product-item-preview-hit">
+                <div class="catalog-img-wrap">
+                  <img class="catalog-img" src="img/ice-cream-4.jpg" width="267" height="267" alt="Мороженое">
+                </div>
+                <div class="product-item-price">
+                  <span class="product-item-cost">415&#8381;</span>
+                  <span class="product-item-amount">/кг</span>
+                </div>
+              </div>
+              <div class="product-item-desc">
+                <a href="#" class="product-item-link">
+                  <span class="product-item-link-content">Сливочное крем-брюле с карамельной подливкой</span>
+                </a>
+              </div>
+              <div class="product-item-hover-wrap">
+                <a class="button  product-item-btn" href="#">Быстрый просмотр</a>
+              </div>
+            </div>
           </div>
-          <p><span class="price">380</span><span class="kg">/кг</span></p>
-          <span><a href="#">Сливочно-кофейное с кусочками шоколада</a></span>
-          <div class="catalog-item-hover-wrap">
-            <a class="button" href="#">Быстрый просмотр</a>
-          </div>
-        </div>
-        <div class="catalog-item">
-          <div class="catalog-item-prewiew-hit">
-            <img class="catalog-img" src="img/ice-cream-3.jpg" width="267" height="267" alt="Мороженое">
-            <p><span class="price">355</span><span class="kg">/кг</span></p>
-          </div>
-          <span><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></span>
-          <div class="catalog-item-hover-wrap">
-            <a class="button" href="#">Быстрый просмотр</a>
-          </div>
-        </div>
-        <div class="catalog-item">
-          <div class="catalog-item-prewiew-hit">
-            <img class="catalog-img" src="img/ice-cream-4.jpg" width="267" height="267" alt="Мороженое">
-            <p><span class="price">415</span><span class="kg">/кг</span></p>
-          </div><span><a href="#">Сливочное крем-брюле с карамельной подливкой</a></span>
-          <div class="catalog-item-hover-wrap">
-            <a class="button" href="#">Быстрый просмотр</a>
-          </div>
-        </div>
-      </section>
+        </section>
       <div class="about-shop">
         <h2 class="about-shop-header">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
         <ul class="about-shop-list">
@@ -147,7 +210,7 @@
           <p class="address-regular">Адрес главного офиса<br>и офлайн-магазина:</p>
           <p class="address-bold">ул. Большая Конюшенная<br>19/8, Санкт-Петербург</p>
           <p class="address-regular">Для заказов по телефону:</p>
-            <p class="address-bold">8 812 450-25-25</p>
+          <p class="address-bold">8 812 450-25-25</p>
           <p class="address-regular">(с 10 до 20 ежедневно)</p>
           <a class="button" href="#">Форма обратной связи</a>
         </div>
@@ -156,9 +219,9 @@
     <footer class="main-footer">
       <section class="social-links">
         <h2 class="visually-hidden">Социальные сети:</h2>
-        <a href="https://twitter.com/" class="social-btn social-btn-tw" aria-label="Твиттер">Твиттер</a> 
-        <a href="https://instagram.com/" class="social-btn social-btn-ins" aria-label="Инстаграм">Инстаграм</a> 
-        <a href="https://facebook.com/" class="social-btn social-btn-fb" aria-label="Фейсбук">Фейсбук</a> 
+        <a href="https://twitter.com/" class="social-btn social-btn-tw" aria-label="Твиттер">Твиттер</a>
+        <a href="https://instagram.com/" class="social-btn social-btn-ins" aria-label="Инстаграм">Инстаграм</a>
+        <a href="https://facebook.com/" class="social-btn social-btn-fb" aria-label="Фейсбук">Фейсбук</a>
         <a href="https://vk.com/" class="social-btn social-btn-vk" aria-label="Вконтакте">Вконтакте</a>
       </section>
       <ul class="footer-nav">
@@ -173,7 +236,7 @@
       </p>
     </footer>
     <section class="feedback">
-     <a href="/" class="button-close" type="button"></a>
+     <a href="#" class="button-close cross">Закрыть</a>
       <h2 class="feedback-title">Мы обязательно вам ответим!</h2>
       <form class="feedback-form" id="feedback-form" action="/" method="post">
         <div class="feedback-name">
@@ -191,5 +254,6 @@
         <button class="button" type="submit">Отправить</button>
       </form>
     </section>
+    </div>
   </body>
 </html>
