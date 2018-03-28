@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
 </head>
- <body>
-  <input class="visually-hidden" id="button-1" type="radio" class="toggle" name="toggle" checked>
-  <input class="visually-hidden" id="button-2" type="radio" class="toggle" name="toggle">
-  <input class="visually-hidden" id="button-3" type="radio" class="toggle" name="toggle">
+  <body>
+  <input class="visually-hidden toggle" id="button-1" type="radio" name="toggle" checked>
+  <input class="visually-hidden toggle" id="button-2" type="radio" name="toggle">
+  <input class="visually-hidden toggle" id="button-3" type="radio" name="toggle">
   <div class="page-wrapper">
     <div class="content-wrapper">
       <header class="main-header">
@@ -59,7 +59,7 @@
           Поиск
           <div class="page-header-popup-wrap  page-header-popup-wrap-extra-space">
             <form class="page-header-search-form" id="search-form" action="/" method="get">
-              <input type="text" name="search-query" placeholder="Что ищем?">
+              <input class="main-input" type="text" name="search-query" placeholder="Что ищем?">
             </form>
           </div>
         </div>
@@ -69,8 +69,8 @@
             <div class="page-header-popup-wrap">
               <form class="login-form" id="login-form" action="/" method="post">
                <label for="email" class="visually-hidden">Электронная почта</label>
-                <input type="email" name="email" id="email" placeholder="Электронная почта">
-                <input type="password" name="password" placeholder="Пароль">
+                <input class="main-input" type="email" name="email" id="email" placeholder="Электронная почта">
+                <input class="main-input" type="password" name="password" placeholder="Пароль">
                 <input class="button" type="submit" value="Войти">
                 <div class="login-form-links">
                   <a class="login-form-link" href="#">
@@ -215,7 +215,7 @@
           </div>
         </section>
         <section class="about-shop">
-          <h2>Магазин Глейси — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h2>
+          <h2>Магазин Глейси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
           <ul class="about-shop-items">
             <li class="about-shop-item  about-shop-item-icecream">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.
             </li>
@@ -245,7 +245,7 @@
                   <div class="subscribe-widjet-content">
                     Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)
                   </div>
-                  <input type="email" name="subscribe-email" placeholder="Электронная почта" required>
+                  <input class="main-input" type="email" name="subscribe-email" placeholder="Электронная почта" required>
                   <input class="button  button-tiny" type="submit" value="Отправить">
                 </form>
               </div>
@@ -255,12 +255,11 @@
         <section class="contacts">
           <h2 class="visually-hidden">Контакты</h2>
           <div class="contacts-map-wrap">
-            <img src="img/map.jpg" class="contacts-map contacts-map-yandex">
+            <div id="yandex-map" class="contacts-map contacts-map-yandex"></div>
           </div>
           <div class="contacts-address">
-            <p>Адрес главного офиса и
-              <br> офлайн магазина:
-              <br>
+            <p>Адрес главного офиса<br>
+             и офлайн магазина:<br>
               <strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong>
             </p>
             <p>Для заказов по телефону:
@@ -332,11 +331,11 @@
       <div class="modal-content-content-wrap">
         <form class="feedback-form" id="feedback-form" action="/" method="post">
           <div class="input-wrap">
-            <input id="user-name" type="text" name="user-name" placeholder="Как вас зовут?" required>
+            <input class="main-input" id="user-name" type="text" name="user-name" placeholder="Как вас зовут?" required>
             <label for="user-name">Как вас зовут?</label>
           </div>
           <div class="input-wrap">
-            <input id="user-email" type="text" name="user-email" placeholder="Ваша почта для ответа?" required>
+            <input class="main-input" id="user-email" type="text" name="user-email" placeholder="Ваша почта для ответа?" required>
             <label for="user-email">Ваша почта для ответа?</label>
           </div>
           <div class="input-wrap">
@@ -348,5 +347,44 @@
       </div>
     </div>
   </div>
+  <script>
+    var contactsFeedbackBtn = document.querySelector(".contacts-button-feedback");
+    var overlay = document.querySelector(".overlay");
+    var modalContentFeedback = document.querySelector(".modal-content-feedback");
+    var modalContentFeedbackCloseBtn = modalContentFeedback.querySelector(".modal-content-button-close");
+    var feedbackForm = document.querySelector("#feedback-form");
+    var userNameField = feedbackForm.querySelector("#user-name");
+    var userEmailField = feedbackForm.querySelector("#user-email");
+    var userNameSaved = localStorage.getItem("user-name");
+    contactsFeedbackBtn.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        modalContentFeedback.classList.add("modal-content-show-fadeout");
+        overlay.classList.add("overlay-show");
+        if (userNameSaved) {
+            userNameField.value = userNameSaved;
+            userEmailField.focus();
+        } else {
+            userNameField.focus();
+        }
+    });
+    modalContentFeedbackCloseBtn.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        modalContentFeedback.classList.remove("modal-content-show-fadeout");
+        overlay.classList.remove("overlay-show");
+    });
+    feedbackForm.addEventListener("submit", function(evt) {
+        localStorage.setItem("user-name", userNameField.value);
+    });
+    window.addEventListener("keydown", function(evt) {
+        if (evt.keyCode === 27) {
+            if (modalContentFeedback.classList.contains("modal-content-show-fadeout")) {
+                modalContentFeedback.classList.remove("modal-content-show-fadeout");
+                overlay.classList.remove("overlay-show");
+            }
+        }
+    });
+    </script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=u-TmgPMIkJufk4YcZJWSAvN0k2UgaezH&amp;id=yandex-map&amp;width=1200&amp;height=430&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false">
+    </script>
   </body>
 </html>

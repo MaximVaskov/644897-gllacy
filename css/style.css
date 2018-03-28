@@ -1,5 +1,4 @@
-﻿html,
-body {
+﻿body {
     margin: 0px;
     padding: 0px;
     min-width: 1200px;
@@ -78,9 +77,7 @@ body {
 
 /*!----------------Формы------------------ */
 
-input[type=text],
-input[type=email],
-input[type=password] {
+.main-input {
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
@@ -99,23 +96,17 @@ input[type=password] {
     outline: none;
 }
 
-input[type=text]:hover,
-input[type=email]:hover,
-input[type=password]:hover {
+.main-input:hover {
     padding: 8px 14px;
     border: 2px solid #c7c6c5;
 }
 
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus {
+.main-input:focus {
     padding: 8px 14px;
     border: 2px solid #8fbdec;
 }
 
-input[type=text]::placeholder,
-input[type=email]::placeholder,
-input[type=password]::placeholder {
+.main-input::placeholder {
     color: #999999;
     font-size: 14px;
     line-height: 24px;
@@ -147,7 +138,7 @@ input[type=password]::placeholder {
     background-color: transparent;
 }
 
-textarea {
+.input-wrap textarea {
     box-sizing: border-box;
     margin: 0px;
     margin-bottom: 22px;
@@ -165,17 +156,17 @@ textarea {
     outline: none;
 }
 
-textarea:hover {
+.input-wrap textarea:hover {
     padding: 8px 14px;
     border: 2px solid #c7c6c5;
 }
 
-textarea:focus {
+.input-wrap textarea:focus {
     padding: 8px 14px;
     border: 2px solid #8fbdec;
 }
 
-textarea::placeholder {
+.input-wrap textarea::placeholder {
     color: #999999;
     font-size: 14px;
     line-height: 24px;
@@ -345,7 +336,7 @@ textarea::placeholder {
     position: absolute;
     top: 50%;
     left: 50%;
-    background-image: url(../img/cross-small.svg);
+    background-image: url("../img/cross-small.svg");
     width: 11px;
     height: 11px;
 }
@@ -476,14 +467,14 @@ textarea::placeholder {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-image: url(../img/search.svg);
+    background-image: url("../img/search.svg");
     width: 17px;
     height: 17px;
     transform: translate(50%, 50%);
 }
 
 .page-header-button-search:hover::before {
-    background-image: url(../img/search-black.png);
+    background-image: url("../img/search-black.svg");
     width: 17px;
     height: 17px;
 }
@@ -498,13 +489,13 @@ textarea::placeholder {
     position: absolute;
     top: 5px;
     left: 15px;
-    background-image: url(../img/entrance.svg);
+    background-image: url("../img/entrance.svg");
     width: 21px;
     height: 19px;
 }
 
 .page-header-button-login:hover::before {
-    background-image: url(../img/entrance-black.svg);
+    background-image: url("../img/entrance-black.svg");
     width: 21px;
     height: 19px;
 }
@@ -514,7 +505,7 @@ textarea::placeholder {
     position: absolute;
     top: 5px;
     left: 16px;
-    background-image: url(../img/basket.svg);
+    background-image: url("../img/basket.svg");
     width: 21px;
     height: 20px;
 }
@@ -536,7 +527,7 @@ textarea::placeholder {
     position: absolute;
     top: 6px;
     left: 15px;
-    background-image: url(../img/basket-red.svg);
+    background-image: url("../img/basket-red.svg");
     width: 21px;
     height: 20px;
 }
@@ -598,7 +589,7 @@ textarea::placeholder {
 /*!----------------Навигация------------------ */
 
 .main-navigation {
-    padding: 5px 16px;
+    padding: 6px 9px;
     font-size: 16px;
     line-height: 18px;
     font-weight: 700;
@@ -907,7 +898,6 @@ textarea::placeholder {
 }
 
 .promo-slider-slide {
-    display: none;
     position: relative;
     text-align: center;
 }
@@ -998,7 +988,7 @@ textarea::placeholder {
 
 .promo-cards-item-chocolate {
     background-color: #84665d;
-    background-image: url('../img/choko-bg.jpg');
+    background-image: url("../img/choko-bg.jpg");
 }
 
 .promo-cards-item-content {
@@ -1151,7 +1141,7 @@ textarea::placeholder {
 }
 
 .filter-form-sort:hover + .filter-form-sort-icon {
-    background-image: url(../img/select-arrow-black.svg);
+    background-image: url("../img/select-arrow-black.svg");
     width: 11px;
     height: 10px;
 }
@@ -1160,7 +1150,7 @@ textarea::placeholder {
     position: absolute;
     top: 13px;
     right: 13px;
-    background: url(../img/select-arrow.svg) no-repeat;
+    background: url("../img/select-arrow.svg") no-repeat;
     width: 11px;
     height: 10px
 }
@@ -1169,6 +1159,8 @@ textarea::placeholder {
     padding: 9px;
     font-size: 16px;
 }
+
+
 
 .nojs .filter-form-price-range input[type=text] {
     display: inline-block;
@@ -1208,7 +1200,8 @@ textarea::placeholder {
 .filter-form-range-scale {
     position: absolute;
     top: 50%;
-    width: 188px;
+    left: 10%;
+    width: 175px;
     height: 4px;
     margin-top: -2px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -1222,6 +1215,17 @@ textarea::placeholder {
     height: 4px;
     margin-top: -2px;
     background-color: #ffffff;
+}
+
+.filter-form-range-toggle::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ababab;
+    margin:-2px;
+    top: 50%;
+    left: 50%;
 }
 
 .filter-form-range-toggle {
@@ -1293,7 +1297,7 @@ textarea::placeholder {
     top: 50%;
     left: 6px;
     margin-top: -11px;
-    background-image: url(../img/radio-off.svg);
+    background-image: url("../img/radio-off.svg");
     background-size: contain;
     opacity: 0.8;
 
@@ -1307,7 +1311,7 @@ textarea::placeholder {
     top: 0;
     width: 22px;
     height: 22px;
-    background-image: url(../img/radio-on.svg);
+    background-image: url("../img/radio-on.svg");
     background-size: contain;
 
 }
@@ -1344,7 +1348,7 @@ textarea::placeholder {
     top: 0;
     width: 24px;
     height: 20px;
-    background: url(../img/checkbox-on.svg) no-repeat;
+    background: url("../img/checkbox-on.svg") no-repeat;
     background-size: contain;
 
 }
@@ -1437,7 +1441,7 @@ textarea::placeholder {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-image: url(../img/hit.svg);
+    background-image: url("../img/hit.svg");
     width: 61px;
     height: 61px;
     z-index: 10;
@@ -1543,11 +1547,11 @@ textarea::placeholder {
 /*!----------------О магазине------------------ */
 
 .about-shop {
-    margin: 20px 2.3%;
+    margin: 19px 2.3%;
     padding: 15px 0px;
     color: #323232;
     background-color: #eee0c4;
-    background-image: url('../img/wafer-bg-pattern.jpg');
+    background-image: url("../img/waffle-pattern.jpg");
     background-position: 15px 50%;
     border-radius: 17px;
 }
@@ -1606,14 +1610,14 @@ textarea::placeholder {
 }
 
 .about-shop-item-icecream::before {
-    background-image: url(../img/ice-cream.svg);
+    background-image: url("../img/ice-cream.svg");
     background-repeat: no-repeat;
     width: 49px;
     height: 49px;
 }
 
 .about-shop-item-leaf::before {
-    background-image: url(../img/leaf.svg);
+    background-image: url("../img/leaf.svg");
     background-repeat: no-repeat;
     width: 49px;
     height: 49px;
@@ -1627,7 +1631,7 @@ textarea::placeholder {
 }
 
 .about-shop-item-temp::before {
-    background-image: url(../img/thermometer.svg);
+    background-image: url("../img/thermometer.svg");
     background-repeat: no-repeat;
     width: 49px;
     height: 49px;
@@ -1776,24 +1780,26 @@ textarea::placeholder {
 }
 
 .contacts-map-wrap {
-    position: relative;
-    height: 430px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: 27% 0%;
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  background-image: url("/img/map.jpg");
+  background-repeat: no-repeat;
+  background-position: 27% 0%;
 }
-
 .contacts-map {
-    position: absolute;
-    display: block;
-    top: 0px;
-    left: 50%;
-    width: 1200px;
-    height: 430px;
-    border: none;
-    transform: translateX(-50%);
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 50%;
+  width: 1200px;
+  height: 430px;
+  border: none;
+  transform: translateX(-50%);
 }
-
+.nojs .contacts-map-yandex {
+  display: none;
+}
 
 .contacts-address {
     position: absolute;
@@ -1909,7 +1915,7 @@ textarea::placeholder {
     position: absolute;
     top: 7px;
     left: 0px;
-    background-image: url(../img/heart.svg);
+    background-image: url("../img/heart.svg");
     width: 15px;
     height: 13px;
 }
@@ -2000,7 +2006,7 @@ textarea::placeholder {
 }
 
 .social-btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2010,25 +2016,25 @@ textarea::placeholder {
 }
 
 .social-btn-tw::before {
-    background-image: url(../img/twitter.svg);
+    background-image: url("../img/twitter.svg");
     width: 33px;
     height: 32px;
 }
 
 .social-btn-ins::before {
-    background-image: url(../img/instagram.svg);
+    background-image: url("../img/instagram.svg");
     width: 32px;
     height: 32px;
 }
 
 .social-btn-fb::before {
-    background-image: url(../img/facebook.svg);
+    background-image: url("../img/facebook.svg");
     width: 32px;
     height: 32px;
 }
 
 .social-btn-vk::before {
-    background-image: url(../img/vk.svg);
+    background-image: url("../img/vk.svg");
     width: 32px;
     height: 32px;
 }
@@ -2099,7 +2105,7 @@ textarea::placeholder {
     position: absolute;
     top: 2px;
     left: 0px;
-    background-image: url(../img/icon-right-small.svg);
+    background-image: url("../img/icon-right-small.svg");
     width: 9px;
     height: 14px;
     transform: scaleX(-1);
@@ -2114,7 +2120,7 @@ textarea::placeholder {
     position: absolute;
     top: 2px;
     right: 0px;
-    background-image: url(../img/icon-right-small.svg);
+    background-image: url("../img/icon-right-small.svg");
     width: 9px;
     height: 14px;
 }
@@ -2127,16 +2133,20 @@ textarea::placeholder {
 /*!----------------Модальное окно------------------ */
 
 .modal-content {
-    display: block;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 15px 25px;
-    padding-bottom: 27px;
-    width: 477px;
-    min-height: 441px;
-    background-color: #f8f7f4;
-    border-radius: 10px;
-    z-index: 500;
+  display: none;
+  position: fixed;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  padding: 15px 25px;
+  padding-bottom: 27px;
+  width: 477px;
+  min-height: 441px;
+  background-color: #f8f7f4;
+  border-radius: 10px;
+  z-index: 500;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -2166,7 +2176,27 @@ textarea::placeholder {
     position: absolute;
     top: -78%;
     left: 62%;
-    background-image: url(../img/cross-big.svg);
+    background-image: url("../img/cross-big.svg");
     width: 18px;
     height: 17px;
+}
+
+.modal-content-show {
+  display: block;
+}
+.modal-content-show-zoomin {
+  display: block;
+  animation: zoomin 0.5s;
+}
+.modal-content-show-flipin {
+  display: block;
+  animation: flipin 0.5s;
+}
+.modal-content-show-fadeout {
+  display: block;
+  animation: fadeout 0.5s;
+}
+
+.modal-content-content-wrap {
+  text-align: right;
 }
