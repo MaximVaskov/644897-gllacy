@@ -12,6 +12,30 @@
   <input class="visually-hidden toggle" id="button-2" type="radio" name="toggle">
   <input class="visually-hidden toggle" id="button-3" type="radio" name="toggle">
   <div class="page-wrapper">
+   <div class="overlay"></div>
+    <div class="modal-content  modal-content-feedback">
+      <div class="modal-content-title">
+        Мы обязательно вам ответим!
+      </div>
+      <button class="modal-content-button-close" type="button" title="Закрыть">Закрыть</button>
+      <div class="modal-content-content-wrap">
+        <form class="feedback-form" id="feedback-form" action="/" method="post">
+          <div class="input-wrap">
+            <input class="main-input subscribe-input" id="user-name" type="text" name="user-name" placeholder="Как вас зовут?" required>
+            <label for="user-name subscribe-input">Как вас зовут?</label>
+          </div>
+          <div class="input-wrap">
+            <input class="main-input subscribe-input" id="user-email" type="text" name="user-email" placeholder="Ваша почта для ответа?" required>
+            <label for="user-email">Ваша почта для ответа?</label>
+          </div>
+          <div class="input-wrap">
+            <textarea id="user-message" name="message" placeholder="Напишите что-нибудь..." required></textarea>
+            <label for="user-message">Напишите что-нибудь...</label>
+          </div>
+          <input class="button" type="submit" value="Отправить">
+        </form>
+      </div>
+    </div>
     <div class="content-wrapper">
       <header class="main-header">
         <div class="main-header-logo">
@@ -245,7 +269,7 @@
                   <div class="subscribe-widjet-content">
                     Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)
                   </div>
-                  <input class="main-input" type="email" name="subscribe-email" placeholder="Электронная почта" required>
+                  <input class="main-input subscribe-input" type="email" name="subscribe-email" placeholder="Электронная почта" required>
                   <input class="button  button-tiny" type="submit" value="Отправить">
                 </form>
               </div>
@@ -312,79 +336,21 @@
           </div>
         </div>
         <div class="page-footer-copyright">
-          <img class="page-footer-copyright-logo" src="img/logo-htmlacademy.svg" width="108" height="38" alt="HTML Academy">
+          <a href ="https://htmlacademy.ru/intensive/htmlcss"><img class="page-footer-copyright-logo" src="img/logo-htmlacademy.svg" width="108" height="38" alt="HTML Academy"></a>
           <div class="page-footer-copyright-label">
             Сделано в
-            <a class="page-footer-link" href="https://htmlacademy.ru">
+            <a class="page-footer-link" href="https://htmlacademy.ru/intensive/htmlcss">
               <span class="page-footer-link-content">HTML Academy</span>
             </a> © 2016
           </div>
         </div>
       </footer>
     </div>
-    <div class="overlay"></div>
-    <div class="modal-content  modal-content-feedback">
-      <div class="modal-content-title">
-        Мы обязательно вам ответим!
-      </div>
-      <button class="modal-content-button-close" type="button" title="Закрыть">Закрыть</button>
-      <div class="modal-content-content-wrap">
-        <form class="feedback-form" id="feedback-form" action="/" method="post">
-          <div class="input-wrap">
-            <input class="main-input" id="user-name" type="text" name="user-name" placeholder="Как вас зовут?" required>
-            <label for="user-name">Как вас зовут?</label>
-          </div>
-          <div class="input-wrap">
-            <input class="main-input" id="user-email" type="text" name="user-email" placeholder="Ваша почта для ответа?" required>
-            <label for="user-email">Ваша почта для ответа?</label>
-          </div>
-          <div class="input-wrap">
-            <textarea id="user-message" name="message" placeholder="Напишите что-нибудь..." required></textarea>
-            <label for="user-message">Напишите что-нибудь...</label>
-          </div>
-          <input class="button" type="submit" value="Отправить">
-        </form>
-      </div>
-    </div>
   </div>
   <script>
-    var contactsFeedbackBtn = document.querySelector(".contacts-button-feedback");
-    var overlay = document.querySelector(".overlay");
-    var modalContentFeedback = document.querySelector(".modal-content-feedback");
-    var modalContentFeedbackCloseBtn = modalContentFeedback.querySelector(".modal-content-button-close");
-    var feedbackForm = document.querySelector("#feedback-form");
-    var userNameField = feedbackForm.querySelector("#user-name");
-    var userEmailField = feedbackForm.querySelector("#user-email");
-    var userNameSaved = localStorage.getItem("user-name");
-    contactsFeedbackBtn.addEventListener("click", function(evt) {
-        evt.preventDefault();
-        modalContentFeedback.classList.add("modal-content-show-fadeout");
-        overlay.classList.add("overlay-show");
-        if (userNameSaved) {
-            userNameField.value = userNameSaved;
-            userEmailField.focus();
-        } else {
-            userNameField.focus();
-        }
-    });
-    modalContentFeedbackCloseBtn.addEventListener("click", function(evt) {
-        evt.preventDefault();
-        modalContentFeedback.classList.remove("modal-content-show-fadeout");
-        overlay.classList.remove("overlay-show");
-    });
-    feedbackForm.addEventListener("submit", function(evt) {
-        localStorage.setItem("user-name", userNameField.value);
-    });
-    window.addEventListener("keydown", function(evt) {
-        if (evt.keyCode === 27) {
-            if (modalContentFeedback.classList.contains("modal-content-show-fadeout")) {
-                modalContentFeedback.classList.remove("modal-content-show-fadeout");
-                overlay.classList.remove("overlay-show");
-            }
-        }
-    });
     </script>
     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=u-TmgPMIkJufk4YcZJWSAvN0k2UgaezH&amp;id=yandex-map&amp;width=1200&amp;height=430&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false">
     </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
