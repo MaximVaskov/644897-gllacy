@@ -1227,7 +1227,7 @@
     width: 4px;
     height: 4px;
     background: #ababab;
-    margin:-2px;
+    margin: -2px;
     top: 50%;
     left: 50%;
 }
@@ -1784,25 +1784,27 @@
 }
 
 .contacts-map-wrap {
-  position: relative;
-  height: 430px;
-  overflow: hidden;
-  background-image: url("/img/map.jpg");
-  background-repeat: no-repeat;
-  background-position: 27% 0%;
+    position: relative;
+    height: 430px;
+    overflow: hidden;
+    background-image: url("/img/map.jpg");
+    background-repeat: no-repeat;
+    background-position: 27% 0%;
 }
+
 .contacts-map {
-  position: absolute;
-  display: block;
-  top: 0px;
-  left: 50%;
-  width: 1200px;
-  height: 430px;
-  border: none;
-  transform: translateX(-50%);
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 50%;
+    width: 1200px;
+    height: 430px;
+    border: none;
+    transform: translateX(-50%);
 }
+
 .nojs .contacts-map-yandex {
-  display: none;
+    display: none;
 }
 
 .contacts-address {
@@ -2137,20 +2139,20 @@
 /*!----------------Модальное окно------------------ */
 
 .modal-content {
-  display: none;
-  position: fixed;
-  box-sizing: border-box;
-  top: 50%;
-  left: 50%;
-  margin: 0 auto;
-  padding: 15px 25px;
-  padding-bottom: 27px;
-  width: 477px;
-  min-height: 441px;
-  background-color: #f8f7f4;
-  border-radius: 10px;
-  z-index: 500;
-  transform: translate(-50%, -50%);
+    display: none;
+    position: fixed;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    padding: 15px 25px;
+    padding-bottom: 27px;
+    width: 477px;
+    min-height: 441px;
+    background-color: #f8f7f4;
+    border-radius: 10px;
+    z-index: 500;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -2186,21 +2188,24 @@
 }
 
 .modal-content-show {
-  display: block;
+    display: block;
 }
+
 .modal-content-show-zoomin {
-  display: block;
-  animation: zoomin 0.5s;
+    display: block;
+    animation: zoomin 0.5s;
 }
+
 .modal-content-show-flipin {
-  display: block;
-  animation: flipin 0.5s;
+    display: block;
+    animation: flipin 0.5s;
 }
+
 .modal-content-show-fadeout {
-  display: block;
-  animation: fadeout 0.5s;
+    display: block;
+    animation: fadeout 0.5s;
 }
 
 .modal-content-content-wrap {
-  text-align: right;
+    text-align: right;
 }
