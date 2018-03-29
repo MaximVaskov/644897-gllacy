@@ -9,6 +9,13 @@
     font-weight: 400;
     color: #ffffff;
     background-color: #849d8f;
+    
+}
+
+.catalog-gradient {
+    width: 100%;
+    max-height: 656px;
+    background: linear-gradient(to bottom, #9cb0a5 0%, #849d8f 100%);
 }
 
 .page-wrapper {
@@ -1474,6 +1481,20 @@
     font-size: 45px;
     line-height: 45px;
     font-weight: 700;
+    margin-right: 31px;
+}
+
+.product-item-cost::after {
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: 36px;
+    background-image: url(../img/ruble.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    left: 52%;
+    margin-top: -19px;
 }
 
 .product-item-amount {

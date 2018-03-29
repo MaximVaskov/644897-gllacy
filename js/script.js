@@ -16,20 +16,21 @@ if (userNameSaved) {
 }
 else {
   userNameField.focus();
+}
 });
 modalContentFeedbackCloseBtn.addEventListener("click", function (evt) {
-  evt.preventDefault();
-  modalContentFeedback.classList.remove("modal-content-show-fadeout");
-  overlay.classList.remove("overlay-show");
+evt.preventDefault();
+modalContentFeedback.classList.remove("modal-content-show-fadeout");
+overlay.classList.remove("overlay-show");
 });
 feedbackForm.addEventListener("submit", function (evt) {
-  localStorage.setItem("user-name", userNameField.value);
+localStorage.setItem("user-name", userNameField.value);
 });
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
   if (modalContentFeedback.classList.contains("modal-content-show-fadeout")) {
-  modalContentFeedback.classList.remove("modal-content-show-fadeout");
-  overlay.classList.remove("overlay-show");
+modalContentFeedback.classList.remove("modal-content-show-fadeout");
+overlay.classList.remove("overlay-show");
 }
 }
 });
