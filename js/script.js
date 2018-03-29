@@ -6,31 +6,34 @@ var feedbackForm = document.querySelector("#feedback-form");
 var userNameField = feedbackForm.querySelector("#user-name");
 var userEmailField = feedbackForm.querySelector("#user-email");
 var userNameSaved = localStorage.getItem("user-name");
+
 contactsFeedbackBtn.addEventListener("click", function (evt) {
-evt.preventDefault();
-modalContentFeedback.classList.add("modal-content-show-fadeout");
-overlay.classList.add("overlay-show");
-if (userNameSaved) {
-  userNameField.value = userNameSaved;
-  userEmailField.focus();
-}
-else {
-  userNameField.focus();
-}
+  evt.preventDefault();
+  modalContentFeedback.classList.add("modal-content-show-fadeout");
+  overlay.classList.add("overlay-show");
+  if (userNameSaved) {
+    userNameField.value = userNameSaved;
+    userEmailField.focus();
+  } else {
+    userNameField.focus();
+  }
 });
+
 modalContentFeedbackCloseBtn.addEventListener("click", function (evt) {
-evt.preventDefault();
-modalContentFeedback.classList.remove("modal-content-show-fadeout");
-overlay.classList.remove("overlay-show");
+  evt.preventDefault();
+  modalContentFeedback.classList.remove("modal-content-show-fadeout");
+  overlay.classList.remove("overlay-show");
 });
+
 feedbackForm.addEventListener("submit", function (evt) {
-localStorage.setItem("user-name", userNameField.value);
+  localStorage.setItem("user-name", userNameField.value);
 });
+
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
-  if (modalContentFeedback.classList.contains("modal-content-show-fadeout")) {
-modalContentFeedback.classList.remove("modal-content-show-fadeout");
-overlay.classList.remove("overlay-show");
-}
-}
+    if (modalContentFeedback.classList.contains("modal-content-show-fadeout")) {
+      modalContentFeedback.classList.remove("modal-content-show-fadeout");
+      overlay.classList.remove("overlay-show");
+    }
+  }
 });
