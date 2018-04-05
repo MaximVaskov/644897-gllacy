@@ -1131,13 +1131,11 @@
 .filter-form-sort:hover {
     font-weight: 500;
     color: #323232;
-    background-color: #ffffff;
 }
 
 .filter-form-sort:hover option {
     font-weight: 500;
     color: #323232;
-    background-color: #ffffff;
 }
 
 .filter-form-sort:hover + .filter-form-sort-icon {
